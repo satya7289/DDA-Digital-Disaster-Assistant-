@@ -1,37 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    {% load static %}
+
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     <style>
-             .panel-body { word-break:break-all}
 
-     </style>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}"/>
+
+
     <title>
         {% block title %}
         {% endblock %}
     </title>
 
-    {% load static %}
 
-    <link rel="stylesheet" href="{% static 'app/mycss.css' %}">
+
+  
 
 </head>
-<body style="background-color:#EEE9E9">
+<body>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top ">
+
+  <div class="container-fluid">
+
+      <div class="navbar-header">
+
+          <a href="{% url 'home' %}" class="navbar-brand"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp HOME</a>
+
+      </div>
+
+      <div >
+          <ul class="nav navbar-nav navbar-right">
+
+
+              <li class=""><a href="{% url 'search' %}">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp SEARCH</a>
+              </li>
+
+
+              <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Safety Instructions<span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+
+                               <li><a href="{% url 'prepare' %}">Prepare</a></li>
+                               <li role="separator" class="divider"></li>
+
+                               <li><a href="{% url 'types' %}">Types</a></li>
+                           </ul>
+              </li>
+               <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Disaster <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+
+                               <li><a href="{% url 'earthquake' %}">Earthquake</a></li>
+
+                               <li><a href="{% url 'flood' %}">Flood</a></li>
+
+                               <li><a href="{% url 'landSlide' %}">Landslide</a></li>
+
+                               <li><a href="{% url 'tsunami' %}">Tsunami</a></li>
+                           </ul>
+              </li>
+
+               {% if user.is_authenticated %}
+
+              <li class=""><a href="{% url 'entry-create' %}">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp ADD</a>
+              </li>
+                {% endif %}
+
+              {% if user.is_authenticated %}
+
+
+               <li class=""><a href="">
+                  <span></span>{{ user.username }}</a>
+              </li>
+              <li class=""><a href="{% url 'logout' %}">
+                  <span></span> LOGOUT</a>
+              </li>
+
+              {% else %}
+
+              <li class=""><a href="{% url 'login' %}">
+                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp LOGIN</a>
+              </li>
+
+              {% endif %}
+
+
+
+
+          </ul>
+      </div>
+  </div>
+</nav>
 
 <main>
-    hiii
+
     {% block body %}
+
+
     {% endblock %}
 
 </main>
 
 
 
+
+<style >
+    body{
+     padding-top:80px;
+     }
+</style>
 
 </body>
 </html>

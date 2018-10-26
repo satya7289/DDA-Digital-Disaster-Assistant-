@@ -30,7 +30,7 @@
 
                  <div class="panel-heading"  >
                           <div class="row">
-                             <div class="col-md-2"><p class="text-center">  year   </p></div>
+                             <div class="col-md-2"><p class="text-center">   {{ entries.year }}   </p></div>
                              <div class="col-md-6"><p class="text-center">   {{ entries.type }}   </p></div>
                               <div class="col-md-4"><p class="text-center">   {{ entries.country }}-{{ entries.state}}   </p></div>
 
@@ -49,10 +49,49 @@
                              <div class="col-md-8" style="background-color:#F5F5DC">
 
                              <p>{{ entries.discription }}</p>
-                                 <a href="#"> CAMPS</a>
+
                              </div>
 
                         </div>
+
+                       {% if entries.camp.count > 1 %}
+                        <br>
+                         <div class="raw">
+                           <div class="col-md-10"><h2 class="text-center text-primary">CAMPS</h2></div>
+                             <br>
+                          <div class="col-md-12">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th> S.No</th>
+                                  <th> Name</th>
+                                  <th> Items </th>
+                                  <th> Facility </th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+
+
+                              {% for camp in entries.camp.all %}
+                                <tr>
+                                  <td>{{ forloop.counter  }}</td>
+                                  <td>{{camp.name}}</td>
+                                  <td>{{camp.items}}</td>
+                                  <td>{{camp.facility}}</td>
+
+                                </tr>
+
+
+                               {% endfor %}
+                               </tbody>
+                            </table>
+                          </div>
+
+                        </div>
+
+                       {% endif %}
+
 
                    </div>
 
@@ -72,19 +111,6 @@
 <br>
 <br>
 
-
-
-       <p>{{ entries.camp.count }}</p>
-
-{% for camp in entries.camp.all %}
- {{camp.name}}
-<br>
- {{request.path}}
-<br>
-{%endfor%}
-
-
-      <a href="{{MEDIA_URL}}{{entries.photo}}">{{ entries.photo }}</a>
 
 
 

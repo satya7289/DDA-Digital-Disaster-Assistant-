@@ -2,16 +2,14 @@
 {% extends 'base.html' %}
 
 
-{% block title %} Home {% endblock %}
+{% block title %} Types {% endblock %}
 
 {% block body %}
-
-
-
+{% load static %}
 
 <br>
 <br>
-<br>
+<div class="container">
 
  <div class="raw">
          <div class="col-md-10 col-md-offset-1" >
@@ -19,19 +17,27 @@
          </div>
  </div>
 
-<hr>
-<hr>
 
 
-<div class="container">
-    <div>
-         <h2 class="text-primary">What to Do During an <big>Earthquake</big></h2>
-         <br>
+
+<div class="raw">
+   <div class="col-md-12 col-md-offset-0" >
+
+    <div class="panel panel-default">
+        <div class="panel-heading"  >
+            <h2 class="text-primary">What to Do During an <big>Earthquake</big></h2>
+        </div>
+
+        <div class="panel-body" style="background-color:#FAFAD2" >
+
+        <br>
         <div class="row">
-         <div class="col-md-8">
+            <div class="col-md-12 col-md-offset-0" >
+                <div class="col-md-8">
              <p class="text-info">Be aware that some earthquakes are actually foreshocks and a larger earthquake might occur. Minimize your
 movements to a few steps to a nearby safe place and if you are indoors, stay there until the shaking has stopped
 and you are sure exiting is safe.</p>
+
              <div class="row">
 
                  <div class="col-md-12">
@@ -95,23 +101,34 @@ been damaged by the earthquake. </li>
             </div>
 
          </div>
-         <div class="col-md-4">
-              <img src="image2.jpg" alt="..." height="100" width="100">
-         </div>
-         </div>
-
-
+                <div class="col-md-4">
+                  <img src="{% static 'image/earthquake.jpg' %}" alt="..." height="500" width="350">
+              </div>
+           </div>
+        </div>
+        </div>
     </div>
-</div>
-<hr>
 
-<div class="container">
-    <div>
-        <h2 class="text-primary">What to Do During a <big>Tsunami</big></h2>
+   </div>
+</div>
+
+
+
+<div class="raw">
+   <div class="col-md-12 col-md-offset-0" >
+
+     <div class="panel panel-default">
+
+        <div class="panel-heading"  >
+            <h2 class="text-primary">What to Do During a <big>Tsunami</big></h2>
+        </div>
+
+      <div class="panel-body" style="background-color:#FAFAD2" >
         <br>
         <div class="raw">
 
-            <div class="col-md-8">
+          <div class="col-md-12 col-md-offset-0" >
+              <div class="col-md-8">
                 <p class="text-info"></p>
 
                 <div class="col-md-12">
@@ -129,22 +146,33 @@ should be heeded. You should move away immediately.</li>
                 </div>
 
             </div>
-
-            <div class="col-md-4">
-              <img src="image2.jpg" alt="..." height="100" width="100">
-           </div>
+              <div class="col-md-4">
+                <img src="{% static 'image/tsunami.jpg' %}" alt="..." height="400" width="350">
+             </div>
+          </div>
 
          </div>
-    </div>
+      </div>
+     </div>
+   </div>
 </div>
-<hr>
 
-<div class="container">
-    <div>
-        <h2 class="text-primary">What to Do During a <big>Volcanic Eruption</big></h2>
+
+
+
+<div class="raw">
+   <div class="col-md-12 col-md-offset-0" >
+
+       <div class="panel panel-default">
+            <div class="panel-heading"  >
+               <h2 class="text-primary">What to Do During a <big>Volcanic Eruption</big></h2>
+            </div>
+
+            <div class="panel-body" style="background-color:#FAFAD2" >
+
         <br>
         <div class="raw">
-
+          <div class="col-md-12 col-md-offset-0" >
             <div class="col-md-8">
 
                 <div class="raw">
@@ -192,24 +220,29 @@ other vents.</li>
 
             <div class="col-md-4">
 
-               <img src="image2.jpg" alt="..." height="100" width="100">
+               <img src="{% static 'image/volcano-eruption-calbuco-chile-1__880.jpg' %}" alt="..."  height="250" width="330">
 
             </div>
+          </div>
 
         </div>
-
-    </div>
-
+            </div>
+       </div>
+   </div>
 </div>
-<hr>
 
 
-<div class="container">
-    <div>
-         <h2 class="text-primary">What to Do During a <big>Cyclone</big></h2>
+<div class="raw">
+   <div class="col-md-12 col-md-offset-0" >
+      <div class="panel panel-default">
+        <div class="panel-heading"  >
+           <h2 class="text-primary">What to Do During a <big>Cyclone</big></h2>
+        </div>
+
+         <div class="panel-body" style="background-color:#FAFAD2" >
          <br>
          <div class="raw">
-
+           <div class="col-md-12 col-md-offset-0" >
              <div class="col-md-8">
 
                  <div class="raw">
@@ -260,15 +293,20 @@ other vents.</li>
              </div>
 
              <div class="col-md-4">
-                 <img src="image2.jpg" alt="..." height="100" width="100">
+                 <img src="{% static 'image/cyclone-and-anticyclone-3006.jpg' %}" alt="..." height="250" width="330">
              </div>
+           </div>
          </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
-<hr>
 
 
+</div>
 
+<br>
+<br>
 
 
 

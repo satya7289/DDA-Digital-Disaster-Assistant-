@@ -34,7 +34,6 @@
                                   <th> State </th>
                                   <th> Locals </th>
                                   <th> Type  </th>
-                                  <th> Camps  </th>
                                   <th> Detail </th>
                                 </tr>
                               </thead>
@@ -43,12 +42,12 @@
 
                               {% for entry in entries %}
                                 <tr>
-                                  <td>Year</td>
+                                  <td>{{entry.year}}</td>
                                   <td>{{entry.country}}</td>
                                   <td>{{entry.state}}</td>
                                   <td>{{entry.local}}</td>
                                   <td>{{entry.type}}</td>
-                                  <td>{{entry.camp.count}}</td>
+
 
                                   <td><a href="{% url 'entry-detail' pk=entry.id %}">Detail</a></td>
                                 </tr>
@@ -72,27 +71,10 @@
 
 </div>
 
-     {% for entry in entries %}
 
-                <p>{{ entry.camp.count }}</p>
 
-                   <br>
 
-                  {% for camp in entry.camp.all %}
-                     {{camp.name}}
-                        <br>
-                         {{request.path}}
-
-                    {%endfor%}
-
-    {%endfor%}
-
-{% for camp in entries.camp.all %}
- {{camp.name}}
 <br>
- {{request.path}}
-<br>
-{%endfor%}
 
 
 

@@ -9,11 +9,54 @@
 {% block body %}
 
 
-      <h2> CAMPS </h2>
-      <h6>{{ camps.name }}</h6>
-      <h6>{{ camps.location}}</h6>
-      <h6>{{ camps.items }}</h6>
-      <h6>{{ camps.facility }}</h6>
+<div>
+    <br>
+    <br>
+ <div class="col-md-10 col-md-offset-1" >
+  <div class="panel panel-default">
+         <div class="panel-heading">
+            <h3 class="text-center">Camp Detail</h3>
+         </div>
+   <div class="panel-body ">
+
+       <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center"><big>NAME</big></div>
+            <div class="col-md-4 text-left">{{ camps.name }}</div>
+       </div>
+       <br>
+       <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center"><big>LOCATION</big></div>
+            <div class="col-md-4 text-left">{{ camps.location}}</div>
+       </div>
+       <br>
+       <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center"><big>ITEMS</big></div>
+            <div class="col-md-4 text-left">{{ camps.items }}</div>
+       </div>
+       <br>
+       <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center"><big>FACILITY</big></div>
+            <div class="col-md-4 text-left">{{ camps.facility }}</div>
+       </div>
+       <br>
+
+
+
+
+
+   </div>
+
+
+
+
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+
 
 
 {% endblock %}
